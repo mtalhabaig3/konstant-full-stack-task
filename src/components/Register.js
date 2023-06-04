@@ -1,30 +1,31 @@
-// Login.js
-import axios from "axios";
+// Register.js
 import React, { useState } from "react";
+import axios from "axios";
 
-const Login = ({ onLogin }) => {
+const Register = ({ onRegister }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
 
-  const handleLogin = async () => {
+  const handleRegister = async () => {
     try {
-      const response = await axios.post("http://localhost:3001/login", {
+      const response = await axios.post("http://localhost:3001/register", {
         username: email,
         password,
       });
       const { userId } = response.data;
       setError("");
-      onLogin(userId);
-      // Login successful, you may set the loggedInUserId state to the logged-in user's ID
+      onRegister(userId);
+      // Registration successful, you may redirect the user to the login page
     } catch (error) {
-      console.error("Error logging in:", error);
+      console.error("Error registering user:", error);
     }
   };
 
   return (
     <div>
-      <h2>Login</h2>
+      <h2>Register</h2>
       <input
         type="email"
         value={email}
@@ -37,10 +38,16 @@ const Login = ({ onLogin }) => {
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Password"
       />
-      <button onClick={handleLogin}>Login</button>
+      <input
+        type="password"
+        value={confirmPassword}
+        onChange={(e) => setConfirmPassword(e.target.value)}
+        placeholder="Confirm Password"
+      />
+      <button onClick={handleRegister}>Register</button>
       {error && <p>{error}</p>}
     </div>
   );
 };
 
-export default Login;
+export default Register;
