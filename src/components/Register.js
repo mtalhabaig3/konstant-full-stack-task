@@ -12,9 +12,11 @@ const Register = ({ onRegister }) => {
     try {
       const response = await axios.post("http://localhost:3001/register", {
         username: email,
-        password,
+        password: password,
       });
+      console.log("register api front end");
       const { userId } = response.data;
+      console.log(userId);
       setError("");
       onRegister(userId);
       // Registration successful, you may redirect the user to the login page

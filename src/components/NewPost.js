@@ -7,7 +7,7 @@ const NewPost = ({ onSubmit }) => {
 
   const handleSubmit = () => {
     // Perform submit logic here
-    onSubmit({ username, message });
+    onSubmit(username, message);
     setUsername("");
     setMessage("");
   };

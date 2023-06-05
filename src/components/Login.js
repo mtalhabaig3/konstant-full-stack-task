@@ -13,7 +13,9 @@ const Login = ({ onLogin }) => {
         username: email,
         password,
       });
+      console.log(response.data);
       const { userId } = response.data;
+      console.log(userId);
       setError("");
       onLogin(userId);
       // Login successful, you may set the loggedInUserId state to the logged-in user's ID
