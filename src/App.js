@@ -1,18 +1,27 @@
 import React, { useEffect, useState } from "react";
-import Login from "./components/Login";
-import Register from "./components/Register";
-import PostList from "./components/PostList";
-import NewPost from "./components/NewPost";
+import Login from "./components/Login/Login";
+import Register from "./components/Register/Register";
+import PostList from "./components/PostList/PostList";
+import NewPost from "./components/NewPost/NewPost";
 import { useNavigate } from "react-router-dom";
 import { Routes, Route, Link } from "react-router-dom";
 import axios from "axios";
+import "./App.css";
 
 const Welcome = () => {
   return (
-    <div>
+    <div className="container">
+      {" "}
       <h2>Welcome</h2>
       <p>Please login or register:</p>
-      <Link to="login">Login</Link> or <Link to="register">Register</Link>
+      <div>
+        <Link className="link" to="/login">
+          Login
+        </Link>{" "}
+        <Link className="link" to="/register">
+          Register
+        </Link>{" "}
+      </div>
     </div>
   );
 };
@@ -41,6 +50,11 @@ const App = () => {
     setIsLoggedIn(true);
     setLoggedInUserId(userId);
     navigate("/");
+  };
+
+  const handleLogOut = () => {
+    setIsLoggedIn(false);
+    setLoggedInUserId(null);
   };
 
   const handleRegister = (userId) => {
@@ -79,13 +93,14 @@ const App = () => {
     try {
       const response = await axios.put(
         `http://localhost:3001/messages/${postId}`,
-        { username: loggedInUserId, message: updatedMessage }
+        { message: updatedMessage, userId: loggedInUserId }
       );
       const updatedPost = response.data;
       const updatedPosts = posts.map((post) =>
         post.id === updatedPost.id ? updatedPost : post
       );
       setPosts(updatedPosts);
+      console.log("handleUpdatePost function");
     } catch (error) {
       console.error("Error updating post:", error);
     }
@@ -100,7 +115,13 @@ const App = () => {
         path="/"
         element={
           isLoggedIn ? (
-            <>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                padding: "10px",
+              }}
+            >
               <NewPost onSubmit={handlePostSubmit} />
               <PostList
                 posts={posts}
@@ -108,7 +129,10 @@ const App = () => {
                 onDelete={handleDeletePost}
                 onUpdate={handleUpdatePost}
               />
-            </>
+              <button className="logout" onClick={handleLogOut}>
+                Log Out
+              </button>
+            </div>
           ) : (
             <Welcome />
           )

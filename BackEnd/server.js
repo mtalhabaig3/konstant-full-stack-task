@@ -11,8 +11,6 @@ let messageId = 1;
 let messages = [];
 let users = [];
 
-console.log(users);
-
 // Get all messages
 app.get("/messages", (req, res) => {
   res.json(messages);
@@ -30,7 +28,7 @@ app.post("/messages", (req, res) => {
 // Update a message
 app.put("/messages/:id", (req, res) => {
   const { id } = req.params;
-  const { username, message, userId } = req.body;
+  const { message, userId } = req.body;
   const timestamp = new Date().toISOString();
 
   const index = messages.findIndex((message) => message.id === parseInt(id));
@@ -38,7 +36,6 @@ app.put("/messages/:id", (req, res) => {
   if (index !== -1 && messages[index].userId === userId) {
     messages[index] = {
       ...messages[index],
-      username,
       message,
       timestamp,
     };
@@ -87,7 +84,7 @@ app.post("/register", (req, res) => {
 app.post("/login", (req, res) => {
   const { username, password } = req.body;
 
-  console.log("login api backend register");
+  console.log("register api backend register");
 
   const user = users.find(
     (user) => user.username === username && user.password === password

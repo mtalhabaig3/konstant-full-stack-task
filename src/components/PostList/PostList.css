@@ -1,0 +1,17 @@
+/* PostList.css */
+.post-list-container {
+  /* text-align: center; */
+  margin-top: 50px;
+  display: flex;
+}
+
+.post-list-title {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.post-list-p {
+  color: #333;
+  font-size: 20px;
+}

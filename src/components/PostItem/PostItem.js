@@ -1,5 +1,6 @@
 // PostItem.js
 import React, { useState } from "react";
+import "./PostItem.css";
 
 const PostItem = ({ post, loggedInUserId, onDelete, onUpdate }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -31,22 +32,34 @@ const PostItem = ({ post, loggedInUserId, onDelete, onUpdate }) => {
   };
 
   return (
-    <div>
-      <h4>{post.username}</h4>
+    <div className="post-item-container">
+      <h4 className="post-item-username">{post.username}</h4>
       {isEditing ? (
         <>
-          <textarea value={updatedMessage} onChange={handleInputChange} />
-          <button onClick={handleUpdate}>Save</button>
-          <button onClick={handleCancelEdit}>Cancel</button>
+          <textarea
+            value={updatedMessage}
+            onChange={handleInputChange}
+            className="post-item-textarea"
+          />
+          <button onClick={handleUpdate} className="post-item-button">
+            Save
+          </button>
+          <button onClick={handleCancelEdit} className="post-item-button">
+            Cancel
+          </button>
         </>
       ) : (
         <>
-          <p>{post.message}</p>
-          <p>{post.timestamp}</p>
+          <p className="post-item-message">{post.message}</p>
+          <p className="post-item-time-stamp">{post.timestamp}</p>
           {post.userId === loggedInUserId && (
             <>
-              <button onClick={handleEdit}>Edit</button>
-              <button onClick={handleDelete}>Delete</button>
+              <button onClick={handleEdit} className="post-item-button">
+                Edit
+              </button>
+              <button onClick={handleDelete} className="post-item-button">
+                Delete
+              </button>
             </>
           )}
         </>

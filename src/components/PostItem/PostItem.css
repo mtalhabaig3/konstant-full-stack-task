@@ -1,0 +1,49 @@
+/* PostItem.css */
+.post-item-container {
+  text-align: center;
+  display: inline-block;
+  margin: 0px 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+}
+
+.post-item-username {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.post-item-textarea {
+  display: block;
+  margin: 10px auto;
+  width: 300px;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.post-item-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.post-item-button:hover {
+  background-color: #0056b3;
+}
+
+.post-item-time-stamp {
+  font-size: 10px;
+}
+
+.post-item-message {
+  font-size: 20px;
+}

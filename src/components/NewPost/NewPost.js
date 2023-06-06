@@ -1,5 +1,6 @@
 // NewPost.js
 import React, { useState } from "react";
+import "./NewPost.css";
 
 const NewPost = ({ onSubmit }) => {
   const [username, setUsername] = useState("");
@@ -13,21 +14,25 @@ const NewPost = ({ onSubmit }) => {
   };
 
   return (
-    <div>
-      <h2>New Post</h2>
+    <div className="new-post-container">
+      <h2 className="new-post-title">New Post</h2>
       <input
         type="text"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
-        placeholder="Username"
+        placeholder="Name"
+        className="new-post-input"
       />
       <input
         type="text"
         value={message}
         onChange={(e) => setMessage(e.target.value)}
         placeholder="Message"
+        className="new-post-input"
       />
-      <button onClick={handleSubmit}>Submit</button>
+      <button onClick={handleSubmit} className="new-post-button">
+        Create
+      </button>
     </div>
   );
 };
