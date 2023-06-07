@@ -22,7 +22,7 @@ cd my-react-project
 
 3. Install the project dependencies:
 
-npm install
+## npm install
 
 ## Starting the Node.js Server
 
@@ -31,22 +31,28 @@ To start the Node.js server, follow these steps:
 Open a new terminal window.
 
 Navigate to the server directory:
-cd BackEnd
+
+## cd BackEnd
 
 Install the server dependencies:
-npm install
+
+## npm install
 
 Start the server:
-node server.js
+
+## node server.js
 
 ## Usage
+
 To run the React project locally, use the following command:
-npm start
+
+## npm start
 
 
 ## Running Tests
 To run the tests for the project, use the following command:
-npm test
+
+## npm test
 
 
 
