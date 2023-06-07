@@ -38,24 +38,21 @@ Open a new terminal window.
    ```shell
    npm install
 
-Start the server:
-
-    ```shell
-    node server.js
+3. Start the server:
+   ```shell
+   node server.js
  
 ## Usage
 
-To run the React project locally, use the following command:
-
-    ```shell
-    npm start
+1. To run the React project locally, use the following command:
+   ```shell
+   npm start
 
 
 ## Running Tests
-To run the tests for the project, use the following command:
-
- ```shell
- npm test
+1. To run the tests for the project, use the following command:
+   ```shell
+   npm test
 
 
 
