@@ -17,12 +17,12 @@ Make sure you have the following software installed on your machine:
    git clone https://github.com/your-username/my-react-project.git
 
 2. Navigate to the project directory:
-
-cd my-react-project
+   ```shell
+   cd my-react-project
 
 3. Install the project dependencies:
-
-## npm install
+   ```shell
+   npm install
 
 ## Starting the Node.js Server
 
@@ -30,29 +30,32 @@ To start the Node.js server, follow these steps:
 
 Open a new terminal window.
 
-Navigate to the server directory:
-
-## cd BackEnd
-
-Install the server dependencies:
-
-## npm install
+1. Navigate to the server directory:
+    ```shell
+    cd BackEnd
+ 
+2. Install the server dependencies:
+   ```shell
+   npm install
 
 Start the server:
 
-## node server.js
-
+    ```shell
+    node server.js
+ 
 ## Usage
 
 To run the React project locally, use the following command:
 
-## npm start
+    ```shell
+    npm start
 
 
 ## Running Tests
 To run the tests for the project, use the following command:
 
-## npm test
+ ```shell
+ npm test
 
 
 
