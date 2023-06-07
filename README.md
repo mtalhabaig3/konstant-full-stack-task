@@ -50,6 +50,7 @@ Open a new terminal window.
 
 
 ## Running Tests
+
 1. To run the tests for the project, use the following command:
    ```shell
    npm test
