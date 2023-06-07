@@ -1,6 +1,17 @@
 # My React Project
 
-This is a sample React project that demonstrates a simple message board application.
+This is a sample React project that demonstrates a simple message board application. It has a:
+ Register and Login Module.
+ A user is able to list all his posts and is able to see all other users’ posts but is only able to
+edit and delete his own posts.
+ Post contains username, message and Time stamp, and can be edited and deleted.
+
+It also has a RESTfull built in Node js where a user can:
+
+ A client can create a message in the service.
+ A client can modify their own messages.
+ A client can delete their own messages.
+ A client can view all messages in the service.
 
 ## Prerequisites
 
